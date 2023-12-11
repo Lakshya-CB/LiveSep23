@@ -1,9 +1,13 @@
 package Lec_17;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class subseq {
 	public static void main(String[] args) {
 //		solve("abc", "");
-		LKC("23","");
+		List<String> AL = new ArrayList<>();
+		LKC("23","",AL);
 
 	}
 
@@ -23,9 +27,10 @@ public class subseq {
 
 	}
 
-	public static void LKC(String buttons, String path) {
+	public static void LKC(String buttons, String path, List<String> AL) {
 		if(buttons.isEmpty()) {
 			System.out.println(path);
+			AL.add(path);
 			return;
 		}
 //		BP : "652"
@@ -33,7 +38,7 @@ public class subseq {
 		String sp = buttons.substring(1); // "52"
 		String ops = fn(buttons.charAt(0)); // "mno"
 		for (int i = 0; i < ops.length(); i++) {
-			LKC(sp, path + ops.charAt(i));
+			LKC(sp, path + ops.charAt(i),AL);
 		}
 
 	}

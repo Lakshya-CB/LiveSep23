@@ -18,11 +18,12 @@ public class blocked_maze {
 				|| Visited[r][c] == true) {
 			return;
 		}
-		Visited[r][c] = true;
+		Visited[r][c] = true;// prep!!
 		chal(r - 1, c, path + "U", maze, Visited);
 		chal(r + 1, c, path + "D", maze, Visited);
 		chal(r, c - 1, path + "L", maze, Visited);
 		chal(r, c + 1, path + "R", maze, Visited);
-//		Visited[r][c] = false;
+		Visited[r][c] = false; // explicitly undo!!
+//		explicit backtracking!!
 	}
 }

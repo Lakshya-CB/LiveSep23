@@ -31,7 +31,7 @@ public class palindrome_partitioning {
 //			Method 2) Explicit Backtracking!!!
 			AL_bag.add(piece); // with 
 			kaat(remain, bag + "," + piece,AL_bag);
-			AL_bag.remove(AL_bag.size()-1);
+			AL_bag.remove(AL_bag.size()-1);//undo
 
 		}
 	}

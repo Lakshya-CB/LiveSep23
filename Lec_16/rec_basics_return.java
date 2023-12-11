@@ -18,6 +18,21 @@ public class rec_basics_return {
 		return sp * a;
 	}
 
+	public static int Pow2(int a, int b) {
+//		BP : Pow(a,b)
+//		SP : Pow(a,b-1)
+		if (b == 0) {
+			return 1;
+		}
+		int sp = Pow2(a, b / 2);
+
+		if (b % 2 == 0) {
+			return sp * sp;
+		} else {
+			return sp * sp * a;
+		}
+	}
+
 	public static int Fact(int n) {
 //		BP : Fact(n)
 //		SP : Fact(n-1)
